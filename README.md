@@ -1,6 +1,5 @@
-Updated the 小狼毛 (liubi) Rime schema with custom weights only.
-Stroke codes have been extracted from G6 and incorporated into the dictionary.
+字既排位同關聯字先後，以香港常用語為先
+關聯字可以到assoc_words.txt自行修改
+Numpad * 出標點符號
 
-出字權重，香港常用口語為先
-打完一個字會出下關聯字，assoc_words.txt可以自行修改
-Numpad *出標點符號
+本方案為基於 Rime 引擎重新編寫嘅全筆劃輸入法，按鍵佈局參考香港中文大學 G6 筆畫輸入法之鍵位設計，所有設定檔與 Lua 腳本均為獨立原創
