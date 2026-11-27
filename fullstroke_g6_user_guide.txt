@@ -1,0 +1,45 @@
+操作指南
+
+採用「右手打碼、左手選字」設計，同時支援桌機數字鍵盤（Numpad）及筆電無數字鍵盤（如 MacBook）盲打。
+
+---
+
+1. 筆畫鍵位（有／無數字鍵盤通用）
+
+有數字鍵盤用右手按 `78945`；無數字鍵盤直接將右手放喺主鍵盤 `I O P`（上排）同 `K L`（中排），鍵位排列完全一致。
+| 筆畫    | 數字鍵盤                   | 無數字鍵盤  |
+| :---    | :---                     | :--- |
+| 一（橫） | 數字鍵盤 `7` (`Numpad 7`) | 主鍵盤 `I`  |
+| 丨（豎） | 數字鍵盤 `8` (`Numpad 8`) | 主鍵盤 `O`  |
+| 丿（撇） | 數字鍵盤 `9` (`Numpad 9`) | 主鍵盤 `P`  |
+| 丶（點） | 數字鍵盤 `4` (`Numpad 4`) | 主鍵盤 `K`  |
+| フ（折） | 數字鍵盤 `5` (`Numpad 5`) | 主鍵盤 `L`  |
+
+---
+
+2. 選字與控制 / Selection & Controls
+
+> 為何 `1–3` 直接按，`4–9` 要加 `Shift`？
+> 受限於 Rime 引擎嘅按鍵映射機制（原生無法直接用數字鍵盤選字，且需避免與打字鍵衝突），目前僅第 `1–3` 位可直接按主鍵盤數字選字，第 `4–9` 位需配合 `Shift` 鍵使用。
+> Due to Rime's key-binding limitations (no native Numpad candidate selection and avoiding conflicts with stroke keys), only candidates `1–3` can be selected directly via the main number row, while `4–9` require holding `Shift`.
+
+| 功能 Action               | 數字鍵盤 Numpad                      | 無數字鍵盤 Laptop              |
+| :---                     | :---                                | :---                         |
+| 選第 1 字 (Select #1)     | 數字數字 `1`                          | `Space` 或 主鍵盤數字 `1`      |
+| 選第 2–3 字 (Select #2–3) | 數字數字 `2` / `3`                    | 主鍵盤數字 `2` / `3`           |
+| 選第 4–9 字 (Select #4–9) | `Shift` + 主鍵盤數字 `4`~`9`          | 主鍵盤數字 `4`~`9`              |
+| 翻頁 (Page Down / Up)     | 數字鍵盤 `+` / `-`                   | `PageDown` / `PageUp`         |
+| 清除字碼 (Clear Code)     | 數字鍵盤 `/`                          | `Backspace`                   |
+| 取消輸入 (Cancel)         | 數字鍵盤 `.`                          | `Esc`                         |
+| 標點選單 (Punctuation)    | 數字鍵盤 `*`                          | `Shift` + 主鍵盤數字 `8` (`*`) |
+
+---
+
+3. 智能聯想（零誤觸設計）
+
+打出中文字後會自動彈出關聯字選單，並內置防誤觸機制，無需手動按 `Esc` 關框：
+
+ 連環接字：按 `Space` 或 主鍵盤數字 `1–3` 繼續揀聯想字；直接打筆畫碼（數字鍵盤 `78945` / 主鍵盤 `IOPKL`）會自動覆蓋選單。
+ 直接送出 / 打標點：聯想框開緊時按 `Enter` 或任何標點，會自動關框並直接送出訊息／輸入標點，絕不誤出聯想字。
+ 一鍵轉英文：聯想框開緊時輕按 `Shift`，同步關框並切換至英文模式。
+

@@ -76,6 +76,7 @@ key_binder:
     - { when: has_menu, accept: "KP_Subtract", send: Page_Up } # 小鍵盤 - 鍵翻上一頁
     - { when: composing, accept: KP_Decimal, send: Escape } # 小鍵盤 . 清除所有字碼
     - { when: always, accept: "KP_Multiply", send: asterisk } # 小鍵盤 * 叫出標點符號選單
+    - { when: composing, accept: "KP_Divide", send: BackSpace } # 小鍵盤 / 清除一個字碼
 
 menu:
   page_size: 9
