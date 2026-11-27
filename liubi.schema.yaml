@@ -13,6 +13,7 @@ engine:
     - ascii_composer
     - recognizer
     - key_binder
+    - lua_processor@*assoc_processor
     - speller
     - punctuator
     - selector
@@ -27,10 +28,10 @@ engine:
   translators:
     - punct_translator
     - table_translator    
+    - lua_translator@*assoc_translator
     - history_translator   
   filters:
     - uniquifier          # 如果有去重，建議放前面  
-    - single_char_filter  # ← 加呢行
     - lua_filter@*force_weight_sort
 
 speller:
@@ -73,6 +74,8 @@ key_binder:
     - { when: has_menu, accept: "KP_0", send: "void" } # 按小鍵盤 0 取消打字
     - { when: has_menu, accept: "KP_Add", send: Page_Down } # 小鍵盤 + 鍵翻下一頁
     - { when: has_menu, accept: "KP_Subtract", send: Page_Up } # 小鍵盤 - 鍵翻上一頁
+    - { when: composing, accept: KP_Decimal, send: Escape } # 小鍵盤 . 清除所有字碼
+    - { when: always, accept: "KP_Multiply", send: asterisk } # 小鍵盤 * 叫出標點符號選單
 
 menu:
   page_size: 9
@@ -100,7 +103,8 @@ history_translator:
 
 punctuator:
   import_preset: default
-  full_shape:
+  half_shape:
+    "*": [ "，", "。", "？", "！", "、", "：", "；", "「", "」", "（", "）", "……", "——", "《", "》", "·" ]
     ",": "，"
     ".": "。"
     "?": "？"
@@ -123,3 +127,31 @@ punctuator:
     "_": "——"
     "~": "～"
     "`": "·"
+  full_shape:
+    "*": [ "，", "。", "？", "！", "、", "：", "；", "「", "」", "（", "）", "……", "——", "《", "》", "·" ]
+    ",": "，"
+    ".": "。"
+    "?": "？"
+    "!": "！"
+    ":": "："
+    ";": "；"
+    "(": "（"
+    ")": "）"
+    "[": "「"
+    "]": "」"
+    "{": "『"
+    "}": "』"
+    "<": "《"
+    ">": "》"
+    "/": "、"
+    "\\": "、"
+    "'": "‘"
+    "\"": "“"
+    "-": "—"
+    "_": "——"
+    "~": "～"
+    "`": "·"
+    
+recognizer:
+  patterns:
+    assoc: "^;$"
