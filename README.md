@@ -8,7 +8,9 @@
 ## 安裝方法
 
 1. 下載方案檔案
+
    前往本專案的 [Releases](https://github.com/carlyleung/fullstroke_g6) 頁面下載最新版本的 `.zip` 壓縮檔並解壓（或直接 `git clone` 本倉庫）。
+
 
 2. 複製檔案至 Rime 用戶資料夾
    將解壓後的所有 `.yaml` 檔案（以及 `lua/` 資料夾，如有）複製到對應平台的 Rime 用戶資料夾：
@@ -19,6 +21,7 @@
     
     (其他platform有可能用到，本人無test過)
 
+
 3. 啟用輸入方案
    打開用戶資料夾內的 `default.custom.yaml`（若不存在請自行建立），加入以下設定以追加本方案（使用 `@next` 可避免覆蓋你原有的輸入方案）：
 
@@ -27,6 +30,7 @@
      "schema_list/@next":
        schema: fullstroke_g6
    ```
+
 
 4. 重新部署
    點擊 Rime 選單中的「重新部署（Deploy）」，等待數秒完成編譯後，按 `Ctrl + ~`（或 `F4`）即可切換至本方案。
