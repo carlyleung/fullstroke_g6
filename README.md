@@ -12,8 +12,11 @@
 
 2. 複製檔案至 Rime 用戶資料夾
    將解壓後的所有 `.yaml` 檔案（以及 `lua/` 資料夾，如有）複製到對應平台的 Rime 用戶資料夾：
+   
     Windows（小狼毫 Weasel）： `%APPDATA%\Rime`（可於工作列右下角右鍵點擊小狼毫圖示 →「用戶資料夾」開啟）
+    
     macOS（鼠鬚管 Squirrel）： `~/Library/Rime`（可於頂部選單列點擊輸入法圖示 →「用戶設定」開啟）
+    
     (其他platform有可能用到，本人無test過)
 
 3. 啟用輸入方案
