@@ -53,6 +53,8 @@ local function force_weight_sort(input, env)
   for cand in input:iter() do
     yield(cand)
   end
+  local ms = (os.clock() - t0) * 1000
+  log.warning(string.format("[PERF] force_weight_sort 耗時: %.3f ms (候選數: %d)", ms, #cands))
 end
 
 return force_weight_sort

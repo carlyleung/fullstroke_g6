@@ -48,8 +48,8 @@ function M.load()
     f1:close()
   end
 
-  -- 2. 同時讀取 liubi.dict.yaml 入面日後新增嘅 2 字以上詞組
-  local f2 = io.open(user_dir .. "/liubi.dict.yaml", "r")
+  -- 2. 同時讀取 fullstroke_g6.dict.yaml 入面日後新增嘅 2 字以上詞組
+  local f2 = io.open(user_dir .. "/fullstroke_g6.dict.yaml", "r")
   if f2 then
     local in_body = false
     for line in f2:lines() do
@@ -78,6 +78,8 @@ function M.load()
     end)
     M.map[k] = list
   end
+  local ms = (os.clock() - t0) * 1000
+  log.warning(string.format("[PERF] assoc_core.load 詞庫載入耗時: %.3f ms", ms))
 end
 
 function M.get_next_chars(ch)
